@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.6-1b01  svn-revision#13094. --><xs:schema xmlns:tns="http://verifyFreeWS.streetmaster/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://verifyFreeWS.streetmaster/">
+
+<xs:element name="VerifyFree" type="tns:VerifyFree"/>
+
+<xs:element name="VerifyFreeResponse" type="tns:VerifyFreeResponse"/>
+
+<xs:complexType name="VerifyFree">
+<xs:sequence>
+<xs:element name="inFree" type="tns:inputVerifyFree" minOccurs="0"/>
+<xs:element name="key" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="inputVerifyFree">
+<xs:sequence>
+<xs:element name="cap" type="xs:string" minOccurs="0"/>
+<xs:element name="localita" type="xs:string" minOccurs="0"/>
+<xs:element name="localita2" type="xs:string" minOccurs="0"/>
+<xs:element name="provincia" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="VerifyFreeResponse">
+<xs:sequence>
+<xs:element name="TotOutFree" type="tns:totOutFree" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="totOutFree">
+<xs:sequence>
+<xs:element name="codErr" type="xs:int"/>
+<xs:element name="norm" type="xs:int"/>
+<xs:element name="numCand" type="xs:int"/>
+<xs:element name="outItem" type="tns:outVerifyFree" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="outVerifyFree">
+<xs:sequence>
+<xs:element name="cap" type="xs:string" minOccurs="0"/>
+<xs:element name="codComune" type="xs:int"/>
+<xs:element name="comune" type="xs:string" minOccurs="0"/>
+<xs:element name="frazione" type="xs:string" minOccurs="0"/>
+<xs:element name="provEstesa" type="xs:string" minOccurs="0"/>
+<xs:element name="provincia" type="xs:string" minOccurs="0"/>
+<xs:element name="regione" type="xs:string" minOccurs="0"/>
+<xs:element name="scoreComune" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
